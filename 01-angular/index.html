@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularDemo</title>
+    <script src="../libs/angular.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-app>
+    
+    <div class="tile">
+        <h1>
+            Simple GST Calculator
+        </h1>
+        <br>
+        Show/Hide <input type="checkbox" ng-init="showme=false" ng-model="showme" > {{showme}} <br> <br>
+        <div ng-show="showme" >
+
+            <input type="text" placeholder="Enter Price" ng-model="price" ng-init="price=0"> Price is {{price|currency:'&#8377;'}}
+            <br><br>
+            <input type="text" placeholder="Enter Quantity" ng-model="qt" ng-init="qt=0"> Quantity is {{qt}}
+            <br><br>
+            Total Amount is {{price*qt}}
+            <br> <br>
+            Total Amount after GST is {{price*qt*1.18}}
+        </div>
+    
+    </div>
+</body>
+</html>
